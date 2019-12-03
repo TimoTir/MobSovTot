@@ -1,0 +1,26 @@
+﻿@model MobSovAlytalo.Models.Talo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Talo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Huone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HuoneID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
