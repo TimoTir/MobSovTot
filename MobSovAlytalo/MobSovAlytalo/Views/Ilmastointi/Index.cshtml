@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MobSovAlytalo.Models.Ilmastointi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IlmastoinninTila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TavoiteLampo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HuoneId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IlmastoinninTila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TavoiteLampo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HuoneId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IlmastointiId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IlmastointiId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IlmastointiId })
+        </td>
+    </tr>
+}
+
+</table>

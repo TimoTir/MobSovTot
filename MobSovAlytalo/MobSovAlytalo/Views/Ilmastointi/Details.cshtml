@@ -1,0 +1,42 @@
+﻿@model MobSovAlytalo.Models.Ilmastointi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ilmastointi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IlmastoinninTila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IlmastoinninTila)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TavoiteLampo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TavoiteLampo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HuoneId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HuoneId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IlmastointiId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

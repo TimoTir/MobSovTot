@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlytaloSiteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IlmastointiController.cs" />
     <Compile Include="Controllers\LampoController.cs" />
     <Compile Include="Controllers\SaunaController.cs" />
     <Compile Include="Controllers\TaloController.cs" />
@@ -150,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlytaloModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ilmastointi.cs">
+      <DependentUpon>AlytaloModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Lampo.cs">
       <DependentUpon>AlytaloModel.tt</DependentUpon>
@@ -241,6 +245,11 @@
     <Content Include="Views\Talo\Edit.cshtml" />
     <Content Include="Views\Talo\Index.cshtml" />
     <Content Include="Views\AlytaloSite\SmartHomeSite.cshtml" />
+    <Content Include="Views\Ilmastointi\Create.cshtml" />
+    <Content Include="Views\Ilmastointi\Delete.cshtml" />
+    <Content Include="Views\Ilmastointi\Details.cshtml" />
+    <Content Include="Views\Ilmastointi\Edit.cshtml" />
+    <Content Include="Views\Ilmastointi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

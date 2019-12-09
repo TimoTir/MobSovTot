@@ -29,5 +29,6 @@ namespace MobSovAlytalo.Models
         public virtual DbSet<Sauna> Sauna { get; set; }
         public virtual DbSet<Talo> Talo { get; set; }
         public virtual DbSet<Valo> Valo { get; set; }
+        public virtual DbSet<Ilmastointi> Ilmastointi { get; set; }
     }
 }

@@ -4,7 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MobSovAlytaloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MobSovAlytaloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ilmastointi">
+          <Key>
+            <PropertyRef Name="IlmastointiId" />
+          </Key>
+          <Property Name="IlmastointiId" Type="int" Nullable="false" />
+          <Property Name="IlmastoinninTila" Type="bit" />
+          <Property Name="TavoiteLampo" Type="int" />
+          <Property Name="HuoneId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Lampo">
           <Key>
             <PropertyRef Name="LampoID" />
@@ -39,13 +48,13 @@
           <Property Name="Huone" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="MobSovAlytaloModelStoreContainer">
+          <EntitySet Name="Ilmastointi" EntityType="Self.Ilmastointi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lampo" EntityType="Self.Lampo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sauna" EntityType="Self.Sauna" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Talo" EntityType="Self.Talo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valo" EntityType="Self.Valo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MobSovAlytaloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -87,7 +96,17 @@
           <EntitySet Name="Sauna" EntityType="Self.Sauna" />
           <EntitySet Name="Talo" EntityType="Self.Talo" />
           <EntitySet Name="Valo" EntityType="Self.Valo" />
+          <EntitySet Name="Ilmastointi" EntityType="MobSovAlytaloModel.Ilmastointi" />
         </EntityContainer>
+        <EntityType Name="Ilmastointi">
+          <Key>
+            <PropertyRef Name="IlmastointiId" />
+          </Key>
+          <Property Name="IlmastointiId" Type="Int32" Nullable="false" />
+          <Property Name="IlmastoinninTila" Type="Boolean" />
+          <Property Name="TavoiteLampo" Type="Int32" />
+          <Property Name="HuoneId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -128,6 +147,16 @@
                 <ScalarProperty Name="ValonTila" ColumnName="ValonTila" />
                 <ScalarProperty Name="ValonMaara" ColumnName="ValonMaara" />
                 <ScalarProperty Name="Huone" ColumnName="Huone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilmastointi">
+            <EntityTypeMapping TypeName="MobSovAlytaloModel.Ilmastointi">
+              <MappingFragment StoreEntitySet="Ilmastointi">
+                <ScalarProperty Name="HuoneId" ColumnName="HuoneId" />
+                <ScalarProperty Name="TavoiteLampo" ColumnName="TavoiteLampo" />
+                <ScalarProperty Name="IlmastoinninTila" ColumnName="IlmastoinninTila" />
+                <ScalarProperty Name="IlmastointiId" ColumnName="IlmastointiId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
