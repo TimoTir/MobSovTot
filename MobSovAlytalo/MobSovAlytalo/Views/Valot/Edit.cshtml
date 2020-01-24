@@ -20,7 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ValonTila, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
+                <div class="clearfix">
                     @Html.EditorFor(model => model.ValonTila)
                     @Html.ValidationMessageFor(model => model.ValonTila, "", new { @class = "text-danger" })
                 </div>
